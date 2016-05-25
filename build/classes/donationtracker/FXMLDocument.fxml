@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="899.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="donationtracker.FXMLDocumentController">
+  <children>
+    <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
+    <TabPane fx:id="tabPane" prefHeight="479.0" prefWidth="769.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab fx:id="enterDataTab" closable="true" text="Enter Data">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <SplitPane dividerPositions="0.5574136008918618" focusTraversable="true" prefHeight="448.0" prefWidth="769.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <items>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="448.0">
+                      <children>
+                        <TextField fx:id="dateTextField" layoutX="48.0" layoutY="229.0" prefHeight="35.0" prefWidth="140.0" />
+                        <TextField fx:id="amountTextField" layoutX="217.0" layoutY="229.0" prefHeight="35.0" prefWidth="140.0" />
+                        <Line endX="6.0" endY="-11.0" layoutX="211.0" layoutY="214.0" startX="-22.0" startY="71.0" />
+                        <Label fx:id="dateLabel" layoutX="154.0" layoutY="213.0" text="DATE" />
+                        <Label fx:id="amountLabel" layoutX="305.0" layoutY="213.0" text="AMOUNT" />
+                        <Button fx:id="addButton" layoutX="366.0" layoutY="229.0" mnemonicParsing="false" onAction="#stackPush" prefHeight="35.0" prefWidth="78.0" text="ADD" />
+                        <Button fx:id="enterX" mnemonicParsing="false" onAction="#exitProgram" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: red;" text="X" textFill="WHITE" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0">
+                          <font>
+                            <Font size="18.0" fx:id="x1" />
+                          </font>
+                        </Button>
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <children>
+                        <Button fx:id="removeFirstButton" mnemonicParsing="false" onAction="#stackPop" prefHeight="34.0" prefWidth="169.0" text="REMOVE LATEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0" />
+                        <Button fx:id="removeLastButton" mnemonicParsing="false" onAction="#queuePull" prefHeight="34.0" prefWidth="168.9998779296875" text="REMOVE EARLIEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="96.0" />
+                        <Button fx:id="removeByDateButton" layoutY="278.0" mnemonicParsing="false" onAction="#removeByDate" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY DATE" AnchorPane.rightAnchor="14.0" />
+                        <TextField fx:id="removeByDateTextField" alignment="CENTER_RIGHT" layoutY="233.0" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this date:" AnchorPane.rightAnchor="13.0" />
+                        <TextField fx:id="removeByAmountTextField" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this amount:" AnchorPane.bottomAnchor="58.0" AnchorPane.rightAnchor="13.0" />
+                        <Button fx:id="removeByAmountButton" mnemonicParsing="false" onAction="#removeByAmount" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY AMOUNT" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="13.0" />
+                        <GridPane fx:id="grid" alignment="TOP_LEFT" gridLinesVisible="false" prefHeight="495.0" prefWidth="183.0" visible="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="14.0">
+                          <children>
+                            <Label fx:id="dateGridLabel" text="DATE" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <Label fx:id="amountGridLabel" text="AMOUNT" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <Label id="amountLabel1" fx:id="dateLabel1" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label fx:id="amountLabel1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label id="amountLabel2" fx:id="dateLabel2" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <Label fx:id="amountLabel2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Label fx:id="dateLabel3" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Label fx:id="amountLabel3" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label fx:id="dateLabel4" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <Label fx:id="amountLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <Label fx:id="dateLabel5" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                            <Label fx:id="amountLabel5" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            <Label fx:id="dateLabel6" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                            <Label fx:id="amountLabel6" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                            <Label fx:id="dateLabel7" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                            <Label fx:id="amountLabel7" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                            <Label fx:id="dateLabel8" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                            <Label fx:id="amountLabel8" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            <Label fx:id="dateLabel9" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                            <Label fx:id="amountLabel9" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                            <Label fx:id="dateLabel10" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                            <Label fx:id="amountLabel10" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                      </children>
+                    </AnchorPane>
+                  </items>
+                </SplitPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="visualizeTab" text="Visualize">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="925.0">
+              <children>
+                <ImageView id="DONATIONS" fx:id="iv" fitHeight="46.0" fitWidth="582.0" layoutX="159.0" layoutY="7.0" pickOnBounds="true">
+                  <image>
+                    <Image url="@DONATIONS.png" preserveRatio="true" smooth="true" />
+                  </image>
+                </ImageView>
+                <Button fx:id="startVisualizationButton" layoutX="57.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="830.0" text="Visualize!" AnchorPane.bottomAnchor="14.0">
+                  <font>
+                    <Font size="22.0" />
+                  </font>
+                </Button>
+                <Button fx:id="visualX" font="$x1" layoutX="14.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: red" text="X" textFill="WHITE" AnchorPane.bottomAnchor="14.0" />
+                <SplitPane dividerPositions="0.5005740528128588" focusTraversable="true" prefHeight="369.0" prefWidth="873.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="52.0">
+                  <items>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <children>
+                        <BarChart fx:id="weeklyAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="378.0" title="Per Week" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <children>
+                        <LineChart fx:id="totalAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="473.0" title="Total" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                      </children>
+                    </AnchorPane>
+                  </items>
+                </SplitPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
