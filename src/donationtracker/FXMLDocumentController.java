@@ -19,7 +19,7 @@ import java.io.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
-
+import javafx.scene.chart.XYChart.*;
 
 /**
  *
@@ -138,10 +138,22 @@ public class FXMLDocumentController implements Initializable {
     ImageView iv;
     
     @FXML
-    BarChart weeklyAmount;
+    BarChart<String, Number> weeklyAmount;
     
     @FXML
-    LineChart totalAmount;
+    LineChart<String, Number> totalAmount;
+    
+    @FXML
+    CategoryAxis weeklyAmountXAxis;
+    
+    @FXML
+    NumberAxis weeklyAmountYAxis;
+    
+    @FXML
+    CategoryAxis totalAmountXAxis;
+    
+    @FXML
+    NumberAxis totalAmountYAxis;
     
     @FXML
     Button startVisualizationButton;
@@ -234,7 +246,8 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void removeByDate(){
+    private void removeByDate(){    //removes all entries with date specified
+                                    //in removeByDateTextField
         String dateString = removeByDateTextField.getText();
         
         for (int i = dateList.size() - 1; i >= 0; i--){
@@ -251,7 +264,8 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private void removeByAmount(){
+    private void removeByAmount(){  //removes all entries with the amount
+                                    //specified in removeByAmountTextField
         String amountString = removeByAmountTextField.getText();
         
         for (int i = amountList.size() - 1; i >= 0; i--){
@@ -283,6 +297,29 @@ public class FXMLDocumentController implements Initializable {
         }
         
         System.exit(0);
+    }
+    
+    @FXML
+    private void visualize(){
+        
+        weeklyAmount.getData().clear();
+        totalAmount.getData().clear();
+        
+        Series<String, Number> weekly = new Series();
+        for (int i = 0; i < dateList.size(); i++){
+            weekly.getData().add(new XYChart.Data(dateList.get(i), amountList.get(i)));
+        }
+        
+        int total = 0;
+        Series<String, Number> fullAmount = new Series<>();
+        for (int i = 0; i < amountList.size(); i++){
+            total = total + amountList.get(i);
+            fullAmount.getData().add(new XYChart.Data(dateList.get(i), total));
+        }
+        
+        weeklyAmount.getData().add(weekly);
+        totalAmount.getData().add(fullAmount);
+        
     }
     
     private void initLabels(){  //adds all grid labels to specified ArrayLists

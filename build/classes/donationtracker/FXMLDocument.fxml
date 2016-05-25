@@ -39,35 +39,35 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                       <children>
                         <Button fx:id="removeFirstButton" mnemonicParsing="false" onAction="#stackPop" prefHeight="34.0" prefWidth="169.0" text="REMOVE LATEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0" />
-                        <Button fx:id="removeLastButton" mnemonicParsing="false" onAction="#queuePull" prefHeight="34.0" prefWidth="168.9998779296875" text="REMOVE EARLIEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="96.0" />
-                        <Button fx:id="removeByDateButton" layoutY="278.0" mnemonicParsing="false" onAction="#removeByDate" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY DATE" AnchorPane.rightAnchor="14.0" />
-                        <TextField fx:id="removeByDateTextField" alignment="CENTER_RIGHT" layoutY="233.0" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this date:" AnchorPane.rightAnchor="13.0" />
-                        <TextField fx:id="removeByAmountTextField" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this amount:" AnchorPane.bottomAnchor="58.0" AnchorPane.rightAnchor="13.0" />
-                        <Button fx:id="removeByAmountButton" mnemonicParsing="false" onAction="#removeByAmount" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY AMOUNT" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="13.0" />
+                        <Button fx:id="removeLastButton" mnemonicParsing="false" onAction="#queuePull" prefHeight="34.0" prefWidth="169.0" text="REMOVE EARLIEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="96.0" />
+                        <Button fx:id="removeByDateButton" layoutY="277.95" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#removeByDate" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY DATE" AnchorPane.rightAnchor="13.0" />
+                        <TextField fx:id="removeByDateTextField" alignment="CENTER_RIGHT" layoutY="231.95" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this date:" AnchorPane.rightAnchor="13.0" />
+                        <TextField fx:id="removeByAmountTextField" alignment="CENTER_RIGHT" layoutY="429.0" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this amount:" AnchorPane.rightAnchor="13.0" />
+                        <Button fx:id="removeByAmountButton" layoutY="474.0" mnemonicParsing="false" onAction="#removeByAmount" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY AMOUNT" AnchorPane.rightAnchor="13.0" />
                         <GridPane fx:id="grid" alignment="TOP_LEFT" gridLinesVisible="false" prefHeight="495.0" prefWidth="183.0" visible="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="14.0">
                           <children>
                             <Label fx:id="dateGridLabel" text="DATE" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                             <Label fx:id="amountGridLabel" text="AMOUNT" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                            <Label id="amountLabel1" fx:id="dateLabel1" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                            <Label fx:id="amountLabel1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                            <Label id="amountLabel2" fx:id="dateLabel2" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                            <Label fx:id="amountLabel2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                            <Label fx:id="dateLabel3" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                            <Label fx:id="amountLabel3" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                            <Label fx:id="dateLabel4" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                            <Label fx:id="amountLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                            <Label fx:id="dateLabel5" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                            <Label fx:id="amountLabel5" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                            <Label fx:id="dateLabel6" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-                            <Label fx:id="amountLabel6" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                            <Label fx:id="dateLabel7" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-                            <Label fx:id="amountLabel7" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                            <Label fx:id="dateLabel8" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-                            <Label fx:id="amountLabel8" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                            <Label fx:id="dateLabel9" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-                            <Label fx:id="amountLabel9" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                            <Label fx:id="dateLabel10" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="10" />
-                            <Label fx:id="amountLabel10" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                            <Label id="amountLabel1" fx:id="dateLabel1" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <Label fx:id="amountLabel1" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label id="amountLabel2" fx:id="dateLabel2" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                            <Label fx:id="amountLabel2" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Label fx:id="dateLabel3" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                            <Label fx:id="amountLabel3" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label fx:id="dateLabel4" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                            <Label fx:id="amountLabel4" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <Label fx:id="dateLabel5" maxHeight="-1.0" maxWidth="1.7976931348623157E308" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                            <Label fx:id="amountLabel5" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            <Label fx:id="dateLabel6" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                            <Label fx:id="amountLabel6" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="29.4141845703125" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                            <Label fx:id="dateLabel7" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                            <Label fx:id="amountLabel7" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                            <Label fx:id="dateLabel8" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                            <Label fx:id="amountLabel8" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                            <Label fx:id="dateLabel9" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                            <Label fx:id="amountLabel9" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                            <Label fx:id="dateLabel10" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                            <Label fx:id="amountLabel10" maxHeight="-1.0" maxWidth="1.7976931348623157E308" prefWidth="30.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                           </children>
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -99,12 +99,7 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="925.0">
               <children>
-                <ImageView id="DONATIONS" fx:id="iv" fitHeight="46.0" fitWidth="582.0" layoutX="159.0" layoutY="7.0" pickOnBounds="true">
-                  <image>
-                    <Image url="@DONATIONS.png" preserveRatio="true" smooth="true" />
-                  </image>
-                </ImageView>
-                <Button fx:id="startVisualizationButton" layoutX="57.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="830.0" text="Visualize!" AnchorPane.bottomAnchor="14.0">
+                <Button fx:id="startVisualizationButton" layoutX="57.0" mnemonicParsing="false" onAction="#visualize" prefHeight="79.0" prefWidth="830.0" text="Visualize!" AnchorPane.bottomAnchor="14.0">
                   <font>
                     <Font size="22.0" />
                   </font>
@@ -116,28 +111,37 @@
                       <children>
                         <BarChart fx:id="weeklyAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="378.0" title="Per Week" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <CategoryAxis fx:id="weeklyAmountXAxis" label="DATE" side="BOTTOM">
+                              <tickLabelFont>
+                                <Font size="25.0" fx:id="x2" />
+                              </tickLabelFont>
+                            </CategoryAxis>
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis fx:id="weeklyAmountYAxis" label="AMOUNT RECEIVED" side="LEFT" tickLabelFont="$x2" />
                           </yAxis>
                         </BarChart>
                       </children>
                     </AnchorPane>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                       <children>
-                        <LineChart fx:id="totalAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="473.0" title="Total" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <LineChart fx:id="totalAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="473.0" title="Total Donations" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <xAxis>
-                            <CategoryAxis side="BOTTOM" />
+                            <CategoryAxis fx:id="totalAmountXAxis" label="DATE" side="BOTTOM" tickLabelFont="$x2" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis fx:id="totalAmountYAxis" label="TOTAL DONATIONS" side="LEFT" tickLabelFont="$x2" />
                           </yAxis>
                         </LineChart>
                       </children>
                     </AnchorPane>
                   </items>
                 </SplitPane>
+                <ImageView id="DONATIONS" fx:id="iv" fitHeight="35.0" fitWidth="564.0" layoutY="14.0" pickOnBounds="true" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="163.0">
+                  <image>
+                    <Image url="@DONATIONS.png" preserveRatio="true" smooth="true" />
+                  </image>
+                </ImageView>
               </children>
             </AnchorPane>
           </content>
