@@ -25,7 +25,7 @@ import javafx.scene.chart.XYChart.*;
  *
  * @author seanc
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController extends Thread implements Initializable {
     
     private ArrayList<String> dateList;
     private ArrayList<Integer> amountList;

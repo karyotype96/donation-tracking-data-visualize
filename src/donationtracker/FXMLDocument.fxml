@@ -105,11 +105,11 @@
                   </font>
                 </Button>
                 <Button fx:id="visualX" font="$x1" layoutX="14.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: red" text="X" textFill="WHITE" AnchorPane.bottomAnchor="14.0" />
-                <SplitPane dividerPositions="0.5005740528128588" focusTraversable="true" prefHeight="369.0" prefWidth="873.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="52.0">
+                <SplitPane dividerPositions="0.49827784156142363" focusTraversable="true" prefHeight="369.0" prefWidth="873.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="52.0">
                   <items>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                       <children>
-                        <BarChart fx:id="weeklyAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="378.0" title="Per Week" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+                        <BarChart fx:id="weeklyAmount" animated="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="431.9998779296875" title="Per Week" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <xAxis>
                             <CategoryAxis fx:id="weeklyAmountXAxis" label="DATE" side="BOTTOM">
                               <tickLabelFont>
@@ -125,7 +125,7 @@
                     </AnchorPane>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                       <children>
-                        <LineChart fx:id="totalAmount" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="473.0" title="Total Donations" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <LineChart fx:id="totalAmount" alternativeColumnFillVisible="true" animated="false" createSymbols="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="367.0" prefWidth="473.0" title="Total Donations" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <xAxis>
                             <CategoryAxis fx:id="totalAmountXAxis" label="DATE" side="BOTTOM" tickLabelFont="$x2" />
                           </xAxis>
