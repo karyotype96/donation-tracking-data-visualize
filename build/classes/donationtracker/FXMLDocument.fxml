@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="899.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="donationtracker.FXMLDocumentController">
+<AnchorPane id="AnchorPane" minHeight="555.0" minWidth="899.0" prefHeight="555.0" prefWidth="899.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="donationtracker.FXMLDocumentController">
   <children>
     <Label fx:id="label" layoutX="126.0" layoutY="120.0" minHeight="16.0" minWidth="69.0" />
     <TabPane fx:id="tabPane" prefHeight="479.0" prefWidth="769.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -38,10 +38,10 @@
                     </AnchorPane>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                       <children>
-                        <Button fx:id="removeFirstButton" mnemonicParsing="false" onAction="#stackPop" prefHeight="34.0" prefWidth="169.0" text="REMOVE LATEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="14.0" />
-                        <Button fx:id="removeLastButton" mnemonicParsing="false" onAction="#queuePull" prefHeight="34.0" prefWidth="169.0" text="REMOVE EARLIEST" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="96.0" />
-                        <Button fx:id="removeByDateButton" layoutY="277.95" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#removeByDate" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY DATE" AnchorPane.rightAnchor="13.0" />
-                        <TextField fx:id="removeByDateTextField" alignment="CENTER_RIGHT" layoutY="231.95" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this date:" AnchorPane.rightAnchor="13.0" />
+                        <Button fx:id="removeFirstButton" layoutY="172.0" mnemonicParsing="false" onAction="#stackPop" prefHeight="34.0" prefWidth="169.0" text="REMOVE LATEST" AnchorPane.rightAnchor="14.0" />
+                        <Button fx:id="removeLastButton" layoutY="220.0" mnemonicParsing="false" onAction="#queuePull" prefHeight="34.0" prefWidth="169.0" text="REMOVE EARLIEST" AnchorPane.rightAnchor="13.0" />
+                        <Button fx:id="removeByDateButton" layoutY="360.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#removeByDate" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY DATE" AnchorPane.rightAnchor="14.0" />
+                        <TextField fx:id="removeByDateTextField" alignment="CENTER_RIGHT" layoutY="309.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this date:" AnchorPane.rightAnchor="13.0" />
                         <TextField fx:id="removeByAmountTextField" alignment="CENTER_RIGHT" layoutY="429.0" prefHeight="35.0" prefWidth="169.0" promptText="Remove by this amount:" AnchorPane.rightAnchor="13.0" />
                         <Button fx:id="removeByAmountButton" layoutY="474.0" mnemonicParsing="false" onAction="#removeByAmount" prefHeight="34.0" prefWidth="169.0" text="REMOVE BY AMOUNT" AnchorPane.rightAnchor="13.0" />
                         <GridPane fx:id="grid" alignment="TOP_LEFT" gridLinesVisible="false" prefHeight="495.0" prefWidth="183.0" visible="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="14.0">
@@ -87,6 +87,9 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                         </GridPane>
+                        <TextField fx:id="initialAmountTextField" prefHeight="34.0" prefWidth="170.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="53.0" />
+                        <Label fx:id="initialAmountLabel" text="Starting Amount" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="32.0" />
+                        <Button fx:id="updateButton" mnemonicParsing="false" onAction="#setBase" prefHeight="34.0" prefWidth="169.0" text="UPDATE" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="90.0" />
                       </children>
                     </AnchorPane>
                   </items>

@@ -16,7 +16,6 @@ import javafx.scene.image.*;
 import javafx.scene.chart.*;
 import java.util.*;
 import java.io.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 import javafx.scene.chart.XYChart.*;
@@ -28,11 +27,12 @@ import javafx.scene.chart.XYChart.*;
 public class FXMLDocumentController extends Thread implements Initializable {
     
     private ArrayList<String> dateList;
-    private ArrayList<Integer> amountList;
+    private ArrayList<Double> amountList;
+    private double initAmount;
     private int count;
-    private Scanner scan;
     private PrintWriter writer;
     private File file;
+    private File initAmountFile;
     private ArrayList<Screen> screens;
     
     @FXML
@@ -117,6 +117,15 @@ public class FXMLDocumentController extends Thread implements Initializable {
     Button addButton;
     
     @FXML
+    Label initialAmountLabel;
+    
+    @FXML
+    TextField initialAmountTextField;
+    
+    @FXML
+    Button updateButton;
+    
+    @FXML
     Button removeFirstButton;
     
     @FXML
@@ -176,14 +185,37 @@ public class FXMLDocumentController extends Thread implements Initializable {
             }
         }
         
+        initAmountFile = new File("init.dat");
+        if (!(initAmountFile.exists())){
+            try {
+                initAmountFile.createNewFile();
+                PrintWriter pWriter = new PrintWriter(initAmountFile);
+                pWriter.append("0");
+                pWriter.close();
+            } catch (IOException e){
+                System.err.println("IOException, please retry...");
+            }
+        }
+        
         try {
             Scanner scan = new Scanner(file);
             while (scan.hasNext()){
                 dateList.add(scan.next());
-                amountList.add(scan.nextInt());
+                amountList.add(scan.nextDouble());
                 count++;
             }
+            
             scan.close();
+            scan.close();
+        } catch (IOException e){
+            System.err.println("IOException, please retry...");
+        }
+        
+        try {
+            Scanner scan = new Scanner(initAmountFile);
+            if (scan.hasNext()){
+                initAmount = scan.nextDouble();
+            }
         } catch (IOException e){
             System.err.println("IOException, please retry...");
         }
@@ -194,6 +226,8 @@ public class FXMLDocumentController extends Thread implements Initializable {
             this.update();
         }
         
+        this.updateBase();
+        
     }
     
     @FXML
@@ -201,13 +235,13 @@ public class FXMLDocumentController extends Thread implements Initializable {
         if (!(dateTextField.getText().isEmpty()) && count < 10){
             if (!(amountTextField.getText().isEmpty())){
                 String date = String.valueOf(dateTextField.getText());
-                Integer amount = Integer.parseInt(amountTextField.getText());
+                Double amount = Double.parseDouble(amountTextField.getText());
                 
                 System.out.println(date);
                 System.out.println(amount);
                 
                 dateList.add(date);
-                amountList.add(amount);
+                amountList.add((double)amount);
                 
                 dateTextField.clear();
                 amountTextField.clear();
@@ -223,26 +257,20 @@ public class FXMLDocumentController extends Thread implements Initializable {
         dateList.remove(count - 1);
         amountList.remove(count-- - 1);
         
-        try {
-            PrintWriter pWriter = new PrintWriter(file);
-            for (int i = 0; i < dateList.size(); i++){
-                pWriter.println(dateList.get(i) + " " + amountList.get(i));
-            }
-            pWriter.close();
-        } catch (IOException e){
-            System.err.println("IOException, please retry...");
-        }
-        
         this.update();
     }
     
     @FXML
     private void queuePull(){
+        
+        initAmount += amountList.get(0);
+        
         dateList.remove(0);
         amountList.remove(0);
         count--;
         
         this.update();
+        this.updateBase();
     }
     
     @FXML
@@ -284,16 +312,27 @@ public class FXMLDocumentController extends Thread implements Initializable {
     @FXML
     private void exitProgram(){
         file.delete();
+        initAmountFile.delete();
         try {
             file.createNewFile();
+            initAmountFile.createNewFile();
+            
             PrintWriter pw = new PrintWriter(file);
             for (int i = 0; i < dateList.size(); i++){
-                pw.printf("%s %d ", dateList.get(i), amountList.get(i));
+                pw.printf("%s %f ", dateList.get(i), amountList.get(i));
             }
             pw.close();
                 
         } catch (IOException e){
             System.err.println("Error saving lists...");
+        }
+        
+        try {
+            PrintWriter pw = new PrintWriter(initAmountFile);
+            pw.append(String.valueOf(initAmount));
+            pw.close();
+        } catch (IOException e) {
+            System.err.println("IOException, please retry...");
         }
         
         System.exit(0);
@@ -310,7 +349,7 @@ public class FXMLDocumentController extends Thread implements Initializable {
             weekly.getData().add(new XYChart.Data(dateList.get(i), amountList.get(i)));
         }
         
-        int total = 0;
+        double total = initAmount;
         Series<String, Number> fullAmount = new Series<>();
         for (int i = 0; i < amountList.size(); i++){
             total = total + amountList.get(i);
@@ -364,5 +403,15 @@ public class FXMLDocumentController extends Thread implements Initializable {
             dateLabelList.get(i).setText(dateList.get(i));
             amountLabelList.get(i).setText(String.valueOf(amountList.get(i)));
         }
+    }
+    
+    @FXML
+    private void setBase(){
+        initAmount = Double.parseDouble(initialAmountTextField.getText());
+        updateBase();
+    }
+    
+    private void updateBase(){
+        initialAmountTextField.setText(String.valueOf(initAmount));
     }
 }
