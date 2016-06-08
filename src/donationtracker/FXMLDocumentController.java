@@ -401,7 +401,7 @@ public class FXMLDocumentController extends Thread implements Initializable {
         
         for (int i = 0; i < dateList.size(); i++){
             dateLabelList.get(i).setText(dateList.get(i));
-            amountLabelList.get(i).setText(String.valueOf(amountList.get(i)));
+            amountLabelList.get(i).setText(String.format("%.2f", amountList.get(i)));
         }
     }
     
@@ -412,6 +412,6 @@ public class FXMLDocumentController extends Thread implements Initializable {
     }
     
     private void updateBase(){
-        initialAmountTextField.setText(String.valueOf(initAmount));
+        initialAmountTextField.setText(String.format("%.2f" , initAmount));
     }
 }
