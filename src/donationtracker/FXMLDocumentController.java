@@ -8,7 +8,6 @@ package donationtracker;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -17,7 +16,6 @@ import javafx.scene.chart.*;
 import java.util.*;
 import java.io.*;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Screen;
 import javafx.scene.chart.XYChart.*;
 
 /**
@@ -30,10 +28,8 @@ public class FXMLDocumentController extends Thread implements Initializable {
     private ArrayList<Double> amountList;
     private double initAmount;
     private int count;
-    private PrintWriter writer;
     private File file;
     private File initAmountFile;
-    private ArrayList<Screen> screens;
     
     @FXML
     TabPane tabPane;
@@ -52,9 +48,6 @@ public class FXMLDocumentController extends Thread implements Initializable {
     
     @FXML
     Button enterX;
-    
-    @FXML
-    Button visualX;
     
     @FXML
     Label amountLabel;
@@ -310,7 +303,8 @@ public class FXMLDocumentController extends Thread implements Initializable {
     }
     
     @FXML
-    private void exitProgram(){
+    private void saveData(){
+        
         file.delete();
         initAmountFile.delete();
         try {
@@ -334,8 +328,6 @@ public class FXMLDocumentController extends Thread implements Initializable {
         } catch (IOException e) {
             System.err.println("IOException, please retry...");
         }
-        
-        System.exit(0);
     }
     
     @FXML
@@ -414,4 +406,5 @@ public class FXMLDocumentController extends Thread implements Initializable {
     private void updateBase(){
         initialAmountTextField.setText(String.format("%.2f" , initAmount));
     }
+    
 }

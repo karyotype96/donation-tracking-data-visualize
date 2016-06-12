@@ -29,7 +29,7 @@
                         <Label fx:id="dateLabel" layoutX="154.0" layoutY="213.0" text="DATE" />
                         <Label fx:id="amountLabel" layoutX="305.0" layoutY="213.0" text="AMOUNT" />
                         <Button fx:id="addButton" layoutX="366.0" layoutY="229.0" mnemonicParsing="false" onAction="#stackPush" prefHeight="35.0" prefWidth="78.0" text="ADD" />
-                        <Button fx:id="enterX" mnemonicParsing="false" onAction="#exitProgram" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: red;" text="X" textFill="WHITE" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0">
+                        <Button fx:id="enterX" mnemonicParsing="false" onAction="#saveData" prefHeight="35.0" prefWidth="203.70709228515625" style="" text="Save Data" textFill="#319900" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="13.0">
                           <font>
                             <Font size="18.0" fx:id="x1" />
                           </font>
@@ -102,13 +102,12 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="925.0">
               <children>
-                <Button fx:id="startVisualizationButton" layoutX="57.0" mnemonicParsing="false" onAction="#visualize" prefHeight="79.0" prefWidth="830.0" text="Visualize!" AnchorPane.bottomAnchor="14.0">
+                <Button fx:id="startVisualizationButton" mnemonicParsing="false" onAction="#visualize" prefHeight="79.0" prefWidth="872.0" text="Visualize!" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="12.0">
                   <font>
                     <Font size="22.0" />
                   </font>
                 </Button>
-                <Button fx:id="visualX" font="$x1" layoutX="14.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="35.0" prefWidth="40.0" style="-fx-background-color: red" text="X" textFill="WHITE" AnchorPane.bottomAnchor="14.0" />
-                <SplitPane dividerPositions="0.49827784156142363" focusTraversable="true" prefHeight="369.0" prefWidth="873.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="52.0">
+                <SplitPane dividerPositions="0.49942594718714123" focusTraversable="true" prefHeight="369.0" prefWidth="873.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="52.0">
                   <items>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                       <children>
